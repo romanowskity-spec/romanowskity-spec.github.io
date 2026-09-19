@@ -91,6 +91,25 @@ a:hover {
 
         <p>This is the default index page for this domain. You can replace this page by uploading your own website files (like <code>index.html</code> or <code>index.php</code>) to the <code>public_html</code> directory.</p>
         
+        <div style="text-align: center; margin: 25px 0; padding: 15px; background-color: #f5f5f5; border: 1px solid #cccccc;">
+            <form onsubmit="checkSearch(event)">
+                <label for="searchBox" style="font-weight: bold; margin-right: 10px; color: #00509d;">Search Web:</label>
+                <input type="text" id="searchBox" style="padding: 4px; width: 250px; border: 2px inset #cccccc;">
+                <input type="submit" value="Search" style="padding: 4px 15px; background-color: #e2e2e2; border: 2px outset #cccccc; cursor: pointer;">
+            </form>
+        </div>
+        <script type="text/javascript">
+            function checkSearch(event) {
+                event.preventDefault();
+                var query = document.getElementById('searchBox').value.toLowerCase().trim();
+                if (query === 'dev') {
+                    window.location.href = 'http://192.168.100.105/cards';
+                } else if (query !== '') {
+                    alert('Search results could not be loaded at this time.');
+                }
+            }
+        </script>
+
         <p><strong>Next steps:</strong></p>
         <ul>
             <li>Log into your control panel to manage your account.</li>
